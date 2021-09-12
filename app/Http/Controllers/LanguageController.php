@@ -8,7 +8,7 @@ class LanguageController extends Controller
 {
     public function index ()
     {
-        $language = ['HTML', 'CSS', 'JavaScript', 'PHP', 'Ruby', 'Python'];
+        $language = ['HTML', 'CSS', 'JavaScript', 'PHP', 'Ruby', 'Python','Swift'];
         return view('language.index', ['language' => $language]);
     }
 }
