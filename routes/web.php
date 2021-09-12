@@ -16,3 +16,27 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Route::Httpメソッド(URI, ACTION);
+Route::get('/route/hello', function () {
+    return '<h1>Hello from Route!';
+});
+
+Route::get('view/hello', function(){
+    return view('message.hello');
+});
+
+Route::get('view/var', function(){
+    $variable = 'Hello flom web.php';
+    return view('message.var', ['variable' => $variable]);
+});
+
+Route::get('view/word/{msg}', function ($msg) {
+    return view('message.word', ['msg' => $msg]);
+});
+Route::get('view/word/{name}/{msg}', function ($name, $msg) {
+    return view('message.word2', [
+        'name' => $name,
+        'msg' => $msg
+    ]);
+});
